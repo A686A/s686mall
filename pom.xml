@@ -14,5 +14,7 @@
         <module>s686mall-product</module>
         <module>s686mall-ware</module>
         <module>s686mall-order</module>
+        <module>s686mall-master</module>
+        <module>s686mall-common</module>
     </modules>
 </project>
