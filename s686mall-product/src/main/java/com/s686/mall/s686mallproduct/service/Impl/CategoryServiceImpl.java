@@ -14,10 +14,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 import java.util.stream.Collectors;
 
 
@@ -53,9 +50,9 @@ public class CategoryServiceImpl extends ServiceImpl<CategoryDao, CategoryEntity
         ).map((menu) -> {
             menu.setChildren(getChildrens(menu, entities));
             return menu;
-        }).sorted((menu1, menu2) -> {
-            return (menu1.getSort() == null ? 0 : menu1.getSort()) - (menu2.getSort() == null ? 0 : menu2.getSort());
-        }).collect(Collectors.toList());
+//        }).sorted((menu1, menu2) -> {
+//            return (menu1.getSort() == null ? 0 : menu1.getSort()) - (menu2.getSort() == null ? 0 : menu2.getSort());
+        }).sorted(Comparator.comparingInt(menu -> (menu.getSort() == null ? 0 : menu.getSort()))).collect(Collectors.toList());
         return level1Menus;
     }
 

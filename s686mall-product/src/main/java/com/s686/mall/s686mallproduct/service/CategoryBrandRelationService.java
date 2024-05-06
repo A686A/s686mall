@@ -10,7 +10,7 @@ import java.util.Map;
 /**
  * 品牌分类关联
  *
- * @author leifengyang
+ * @author SR
  */
 public interface CategoryBrandRelationService extends IService<CategoryBrandRelationEntity> {
 

@@ -8,7 +8,7 @@ server:
     connection-timeout: 5000ms
   port: 8080
   servlet:
-    context-path: /renren-fast
+    context-path: /s686mall-master
 
 spring:
   # 环境 dev|test|prod
@@ -28,15 +28,21 @@ spring:
     throw-exception-if-no-handler-found: true
     pathmatch:
       matching-strategy: ANT_PATH_MATCHER
-#  resources:
-#    add-mappings: false
+  #  resources:
+  #    add-mappings: false
+  application:
+    name: s686mall-master
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 127.0.0.1:8848
 
 
 #mybatis
 mybatis-plus:
   mapper-locations: classpath*:/mapper/**/*.xml
   #实体扫描，多个package用逗号或者分号分隔
-  typeAliasesPackage: io.renren.modules.*.com.s686.mall.s686mallproduct.entity
+  typeAliasesPackage: com.s686.mall.s686mallmaster.modules.*
   global-config:
     #数据库相关配置
     db-config:

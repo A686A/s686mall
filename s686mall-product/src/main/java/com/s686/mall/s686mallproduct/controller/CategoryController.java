@@ -17,7 +17,7 @@ import java.util.List;
 /**
  * 商品三级分类
  *
- * @author leifengyang
+ * @author SR
  */
 @RestController
 @RequestMapping("product/category")
@@ -28,11 +28,12 @@ public class CategoryController {
     /**
      * 查出所有分类以及子分类，以树形结构组装起来
      */
+    //http:localhost:9001/product/category/list/tree
+    //http:localhost:88/api/product/category/list/tree
     @RequestMapping("/list/tree")
     public R list() {
 
         List<CategoryEntity> entities = categoryService.listWithTree();
-
 
         return R.ok().put("data", entities);
     }
