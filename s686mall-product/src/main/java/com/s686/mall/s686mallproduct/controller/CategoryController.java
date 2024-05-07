@@ -29,7 +29,7 @@ public class CategoryController {
      * 查出所有分类以及子分类，以树形结构组装起来
      */
     //http:localhost:9001/product/category/list/tree
-    //http:localhost:88/api/product/category/list/tree
+    //http://localhost:88/api/product/category/list/tree
     @RequestMapping("/list/tree")
     public R list() {
 
@@ -84,6 +84,8 @@ public class CategoryController {
      *
      * @RequestBody:获取请求体，必须发送POST请求 SpringMVC自动将请求体的数据（json），转为对应的对象
      */
+    //http://localhost:88/api/product/category/delete
+    //body  [1432]
     @RequestMapping("/delete")
     //@RequiresPermissions("product:category:delete")
     public R delete(@RequestBody Long[] catIds) {
