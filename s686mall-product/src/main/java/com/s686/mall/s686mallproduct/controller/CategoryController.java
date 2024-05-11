@@ -42,6 +42,7 @@ public class CategoryController {
     /**
      * 信息
      */
+    //http://localhost:88/api/product/category/info/{catId}
     @RequestMapping("/info/{catId}")
     //@RequiresPermissions("product:category:info")
     public R info(@PathVariable("catId") Long catId) {
@@ -56,6 +57,7 @@ public class CategoryController {
     @RequestMapping("/save")
     //@RequiresPermissions("product:category:save")
     public R save(@RequestBody CategoryEntity category) {
+        System.out.println("ssssssssssssssssssssssssssssssssssss================save");
         categoryService.save(category);
 
         return R.ok();
@@ -71,13 +73,26 @@ public class CategoryController {
     /**
      * 修改
      */
+    //http://localhost:88/api/product/category/update
     @RequestMapping("/update")
     //@RequiresPermissions("product:category:update")
     public R update(@RequestBody CategoryEntity category) {
+        System.out.println("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa================u0pate");
         categoryService.updateCascade(category);
         return R.ok();
     }
 
+    /**
+     * 修改
+     */
+    //http://localhost:88/api/product/category/update
+    @RequestMapping("/updateById")
+    //@RequiresPermissions("product:category:update")
+    public R updateById(@RequestBody CategoryEntity category) {
+        System.out.println("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa================updateById");
+        categoryService.updateById(category);
+        return R.ok();
+    }
 
     /**
      * 删除
