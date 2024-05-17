@@ -17,5 +17,6 @@
         <module>s686mall-master</module>
         <module>s686mall-common</module>
         <module>s686mall-gateway</module>
+        <module>s686mall-third-party</module>
     </modules>
 </project>
