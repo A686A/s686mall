@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import javax.validation.Valid;
 import java.util.Arrays;
 import java.util.List;
 
@@ -54,9 +55,10 @@ public class CategoryController {
     /**
      * 保存
      */
+    //http://localhost:88/api/product/category/save
     @RequestMapping("/save")
     //@RequiresPermissions("product:category:save")
-    public R save(@RequestBody CategoryEntity category) {
+    public R save(@Valid @RequestBody CategoryEntity category) {
         System.out.println("ssssssssssssssssssssssssssssssssssss================save");
         categoryService.save(category);
 
